@@ -7,7 +7,7 @@ test.describe.parallel("Collection Retrieval", () => {
         const response = await request.get(`?key=${API_KEY}`)
         expect(response.status()).toBe(200)
         const data = await response.json()//voorkomen dat aschryone proces door gaat
-        expect(data.artObjects.length).toBeGreaterThan(0)
+        expect(data.artObjects.length).toBeGreaterThan(0)//wil weten of er iets in de array artObjects zit 
         expect(data.artObjects[0]).toHaveProperty('title')
     })
 })
