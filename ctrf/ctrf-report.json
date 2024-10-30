@@ -1,0 +1,56 @@
+{
+  "results": {
+    "tool": {
+      "name": "playwright"
+    },
+    "summary": {
+      "tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "pending": 0,
+      "skipped": 0,
+      "other": 0,
+      "start": 1730271146303,
+      "stop": 1730271148449,
+      "suites": 0
+    },
+    "tests": [
+      {
+        "name": "Retrieve collection and check title ",
+        "status": "passed",
+        "duration": 1409,
+        "start": 1730271146,
+        "stop": 1730271148,
+        "rawStatus": "passed",
+        "tags": [],
+        "type": "e2e",
+        "filePath": "C:\\Users\\Ricardo Moeljoredjo\\Documents\\AHWebApi\\tests\\api.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "steps": [],
+        "suite": "chromium > api.spec.ts > Collection Retrieval",
+        "extra": {
+          "annotations": []
+        }
+      },
+      {
+        "name": "Retrieve Collection and check details",
+        "status": "passed",
+        "duration": 1129,
+        "start": 1730271147,
+        "stop": 1730271148,
+        "rawStatus": "passed",
+        "tags": [],
+        "type": "e2e",
+        "filePath": "C:\\Users\\Ricardo Moeljoredjo\\Documents\\AHWebApi\\tests\\api.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "steps": [],
+        "suite": "chromium > api.spec.ts > Collection Detail Retrieval",
+        "extra": {
+          "annotations": []
+        }
+      }
+    ]
+  }
+}
