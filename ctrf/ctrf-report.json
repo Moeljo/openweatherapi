@@ -4,23 +4,23 @@
       "name": "playwright"
     },
     "summary": {
-      "tests": 1,
-      "passed": 1,
+      "tests": 2,
+      "passed": 2,
       "failed": 0,
       "pending": 0,
       "skipped": 0,
       "other": 0,
-      "start": 1730368849744,
-      "stop": 1730368852082,
+      "start": 1730369131373,
+      "stop": 1730369133696,
       "suites": 0
     },
     "tests": [
       {
-        "name": "Retrieve collection and check objectnumber & longtitle ",
+        "name": "Retrieve collection and check for title ",
         "status": "passed",
-        "duration": 1409,
-        "start": 1730368850,
-        "stop": 1730368852,
+        "duration": 1433,
+        "start": 1730369132,
+        "stop": 1730369133,
         "rawStatus": "passed",
         "tags": [],
         "type": "e2e",
@@ -28,7 +28,25 @@
         "retries": 0,
         "flaky": false,
         "steps": [],
-        "suite": "chromium > api.spec.ts > Collection Retrieval Details",
+        "suite": "chromium > api.spec.ts > Collection Retrieval",
+        "extra": {
+          "annotations": []
+        }
+      },
+      {
+        "name": "Retrieve collection and validate title ",
+        "status": "passed",
+        "duration": 1312,
+        "start": 1730369132,
+        "stop": 1730369133,
+        "rawStatus": "passed",
+        "tags": [],
+        "type": "e2e",
+        "filePath": "C:\\Users\\Ricardo Moeljoredjo\\Documents\\AHWebApi\\tests\\api.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "steps": [],
+        "suite": "chromium > api.spec.ts > Collection Retrieval",
         "extra": {
           "annotations": []
         }

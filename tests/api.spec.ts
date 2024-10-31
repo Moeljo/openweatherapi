@@ -32,7 +32,7 @@ test.describe.parallel("Collection Retrieval", () => {
 })
 
 test.describe.parallel("Collection Retrieval Details", () => {
-    test.only("Retrieve collection and check objectnumber & longtitle ", async ({ request }) => {
+    test("Retrieve collection and check objectnumber & longtitle ", async ({ request }) => {
         const objectNumber = 'BK-17496'
         const response = await request.get(`?objectNumber=${objectNumber}&key=${API_KEY}`)
         expect(response.status()).toBe(200)
