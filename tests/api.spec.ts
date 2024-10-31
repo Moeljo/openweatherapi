@@ -32,7 +32,7 @@ test.describe.parallel("Collection Retrieval", () => {
 })
 
 test.describe.parallel("Collection Retrieval Details", () => {
-    test("Retrieve collection and check objectnumber & longtitle ", async ({ request }) => {
+    test("Retrieve collection and check objectnumber & longtitle", async ({ request }) => {
         const objectNumber = 'BK-17496'
         const response = await request.get(`?objectNumber=${objectNumber}&key=${API_KEY}`)
         expect(response.status()).toBe(200)
@@ -51,7 +51,7 @@ test.describe.parallel("Collection Retrieval Details", () => {
         const data = await response.json()
         expect(data.artObjects[0]).toHaveProperty('title')
         expect(data.artObjects[0]).toHaveProperty('principalOrFirstMaker')
-        expect(data.artObjects[0].principalOrFirstMaker).toBe('Meissener Porzellan Manufaktur') // Does not exist
+        expect(data.artObjects[0].principalOrFirstMaker).toBe('Does not exist') // Does not exist Meissener Porzellan Manufaktur
     })
 })
 
