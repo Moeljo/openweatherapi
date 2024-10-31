@@ -4,23 +4,41 @@
       "name": "playwright"
     },
     "summary": {
-      "tests": 2,
-      "passed": 2,
-      "failed": 0,
+      "tests": 6,
+      "passed": 5,
+      "failed": 1,
       "pending": 0,
       "skipped": 0,
       "other": 0,
-      "start": 1730283202058,
-      "stop": 1730283204181,
+      "start": 1730368130942,
+      "stop": 1730368134482,
       "suites": 0
     },
     "tests": [
       {
-        "name": "Retrieve collection and check title ",
+        "name": "Validate response status 200",
         "status": "passed",
-        "duration": 1213,
-        "start": 1730283202,
-        "stop": 1730283203,
+        "duration": 1265,
+        "start": 1730368131,
+        "stop": 1730368133,
+        "rawStatus": "passed",
+        "tags": [],
+        "type": "e2e",
+        "filePath": "C:\\Users\\Ricardo Moeljoredjo\\Documents\\AHWebApi\\tests\\api.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "steps": [],
+        "suite": "chromium > api.spec.ts > Successful response",
+        "extra": {
+          "annotations": []
+        }
+      },
+      {
+        "name": "Retrieve collection and check for title ",
+        "status": "passed",
+        "duration": 1205,
+        "start": 1730368131,
+        "stop": 1730368133,
         "rawStatus": "passed",
         "tags": [],
         "type": "e2e",
@@ -34,11 +52,11 @@
         }
       },
       {
-        "name": "Retrieve Collection and check details",
+        "name": "Retrieve collection and validate title ",
         "status": "passed",
-        "duration": 1404,
-        "start": 1730283202,
-        "stop": 1730283204,
+        "duration": 1454,
+        "start": 1730368131,
+        "stop": 1730368133,
         "rawStatus": "passed",
         "tags": [],
         "type": "e2e",
@@ -46,7 +64,63 @@
         "retries": 0,
         "flaky": false,
         "steps": [],
-        "suite": "chromium > api.spec.ts > Collection Detail Retrieval",
+        "suite": "chromium > api.spec.ts > Collection Retrieval",
+        "extra": {
+          "annotations": []
+        }
+      },
+      {
+        "name": "Retrieve collection and check objectnumber & longtitle ",
+        "status": "passed",
+        "duration": 1269,
+        "start": 1730368131,
+        "stop": 1730368133,
+        "rawStatus": "passed",
+        "tags": [],
+        "type": "e2e",
+        "filePath": "C:\\Users\\Ricardo Moeljoredjo\\Documents\\AHWebApi\\tests\\api.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "steps": [],
+        "suite": "chromium > api.spec.ts > Collection Retrieval Details",
+        "extra": {
+          "annotations": []
+        }
+      },
+      {
+        "name": "Fail this test for reporting",
+        "status": "failed",
+        "duration": 1142,
+        "start": 1730368133,
+        "stop": 1730368134,
+        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"Does not exist\"\u001b[39m\nReceived: \u001b[31m\"Meissener Porzellan Manufaktur\"\u001b[39m",
+        "trace": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"Does not exist\"\u001b[39m\nReceived: \u001b[31m\"Meissener Porzellan Manufaktur\"\u001b[39m\n    at C:\\Users\\Ricardo Moeljoredjo\\Documents\\AHWebApi\\tests\\api.spec.ts:55:58",
+        "rawStatus": "failed",
+        "tags": [],
+        "type": "e2e",
+        "filePath": "C:\\Users\\Ricardo Moeljoredjo\\Documents\\AHWebApi\\tests\\api.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "steps": [],
+        "suite": "chromium > api.spec.ts > Collection Retrieval Details",
+        "extra": {
+          "annotations": []
+        }
+      },
+      {
+        "name": "Retrieve Collection and check details",
+        "status": "passed",
+        "duration": 1274,
+        "start": 1730368133,
+        "stop": 1730368134,
+        "rawStatus": "passed",
+        "tags": [],
+        "type": "e2e",
+        "filePath": "C:\\Users\\Ricardo Moeljoredjo\\Documents\\AHWebApi\\tests\\api.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "steps": [],
+        "suite": "chromium > api.spec.ts > Collection Retrieval Details",
         "extra": {
           "annotations": []
         }
