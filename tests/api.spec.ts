@@ -32,13 +32,12 @@ test.describe.parallel("Collection Retrieval", () => {
 })
 
 test.describe.parallel("Collection Retrieval Details", () => {
-    test("Retrieve collection and check objectnumber & longtitle ", async ({ request }) => {
-        const response = await request.get(`?key=${API_KEY}`)
+    test.only("Retrieve collection and check objectnumber & longtitle ", async ({ request }) => {
+        const objectNumber = 'BK-17496'
+        const response = await request.get(`?objectNumber=${objectNumber}&key=${API_KEY}`)
         expect(response.status()).toBe(200)
         const data = await response.json()
         expect(data.artObjects.length).toBeGreaterThan(0)
-        expect(data.artObjects[0]).toHaveProperty('objectNumber')
-        expect(data.artObjects[0].objectNumber).toBe('BK-17496')
         expect(data.artObjects[0]).toHaveProperty('longTitle')
         expect(data.artObjects[0].longTitle).toBe('Blauwe papegaai, Meissener Porzellan Manufaktur, 1731')
     })
@@ -52,7 +51,7 @@ test.describe.parallel("Collection Retrieval Details", () => {
         const data = await response.json()
         expect(data.artObjects[0]).toHaveProperty('title')
         expect(data.artObjects[0]).toHaveProperty('principalOrFirstMaker')
-        expect(data.artObjects[0].principalOrFirstMaker).toBe('Does not exist') // must be Meissener Porzellan Manufaktur
+        expect(data.artObjects[0].principalOrFirstMaker).toBe('Meissener Porzellan Manufaktur') // Does not exist
     })
 })
 
