@@ -51,7 +51,7 @@ test.describe.parallel("Collection Retrieval Details", () => {
         const data = await response.json()
         expect(data.artObjects[0]).toHaveProperty('title')
         expect(data.artObjects[0]).toHaveProperty('principalOrFirstMaker')
-        expect(data.artObjects[0].principalOrFirstMaker).toBe('Does not exist') // Does not exist Meissener Porzellan Manufaktur
+        expect(data.artObjects[0].principalOrFirstMaker).toBe('Meissener Porzellan Manufaktur') // Does not exist Meissener Porzellan Manufaktur
     })
 })
 
