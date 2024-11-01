@@ -11,7 +11,7 @@ test.describe.parallel("Successful response", () => {
 })
 
 test.describe.parallel("Collection Retrieval", () => {
-    test("Retrieve collection and check for title ", async ({ request }) => {
+    test("Retrieve collection and check for title", async ({ request }) => {
         const response = await request.get(`?key=${API_KEY}`)
         expect(response.status()).toBe(200)
         const data = await response.json()
@@ -21,7 +21,7 @@ test.describe.parallel("Collection Retrieval", () => {
 })
 
 test.describe.parallel("Collection Retrieval", () => {
-    test("Retrieve collection and validate title ", async ({ request }) => {
+    test("Retrieve collection and validate title", async ({ request }) => {
         const response = await request.get(`?key=${API_KEY}`)
         expect(response.status()).toBe(200)
         const data = await response.json()
@@ -32,7 +32,7 @@ test.describe.parallel("Collection Retrieval", () => {
 })
 
 test.describe.parallel("Collection Retrieval Details", () => {
-    test("Retrieve collection and check objectnumber & longtitle", async ({ request }) => {
+    test("Retrieve collection and check longtitle of objectNumber", async ({ request }) => {
         const objectNumber = 'BK-17496'
         const response = await request.get(`?objectNumber=${objectNumber}&key=${API_KEY}`)
         expect(response.status()).toBe(200)
@@ -56,13 +56,13 @@ test.describe.parallel("Collection Retrieval Details", () => {
 })
 
 test.describe.parallel("Collection Retrieval Details", () => {
-    test("Retrieve Collection and check details", async ({ request }) => {
+    test("Retrieve Collection and check details of objectNumber", async ({ request }) => {
         const objectNumber = 'RP-P-OB-184' 
         const response = await request.get(`?objectNumber=${objectNumber}&key=${API_KEY}`)
         expect(response.status()).toBe(200)
         const data = await response.json()
-        expect(data.artObjects[1]).toHaveProperty('title')
+        expect(data.artObjects[0]).toHaveProperty('title')
         expect(data.artObjects[0]).toHaveProperty('principalOrFirstMaker')
-        expect(data.artObjects[0].principalOrFirstMaker).toBe('Meissener Porzellan Manufaktur')
+        expect(data.artObjects[8].principalOrFirstMaker).toBe('Willem van de Velde (I)')
     })
 })

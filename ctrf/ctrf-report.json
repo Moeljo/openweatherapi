@@ -4,115 +4,23 @@
       "name": "playwright"
     },
     "summary": {
-      "tests": 6,
-      "passed": 5,
-      "failed": 1,
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
       "pending": 0,
       "skipped": 0,
       "other": 0,
-      "start": 1730399375536,
-      "stop": 1730399379162,
+      "start": 1730438106403,
+      "stop": 1730438108433,
       "suites": 0
     },
     "tests": [
       {
-        "name": "Validate response status 200",
+        "name": "Retrieve Collection and check details of objectNumber",
         "status": "passed",
-        "duration": 1494,
-        "start": 1730399376,
-        "stop": 1730399378,
-        "rawStatus": "passed",
-        "tags": [],
-        "type": "e2e",
-        "filePath": "C:\\Users\\Ricardo Moeljoredjo\\Documents\\AHWebApi\\tests\\api.spec.ts",
-        "retries": 0,
-        "flaky": false,
-        "steps": [],
-        "suite": "chromium > api.spec.ts > Successful response",
-        "extra": {
-          "annotations": []
-        }
-      },
-      {
-        "name": "Retrieve collection and check for title ",
-        "status": "passed",
-        "duration": 1432,
-        "start": 1730399376,
-        "stop": 1730399378,
-        "rawStatus": "passed",
-        "tags": [],
-        "type": "e2e",
-        "filePath": "C:\\Users\\Ricardo Moeljoredjo\\Documents\\AHWebApi\\tests\\api.spec.ts",
-        "retries": 0,
-        "flaky": false,
-        "steps": [],
-        "suite": "chromium > api.spec.ts > Collection Retrieval",
-        "extra": {
-          "annotations": []
-        }
-      },
-      {
-        "name": "Retrieve collection and validate title ",
-        "status": "passed",
-        "duration": 1379,
-        "start": 1730399376,
-        "stop": 1730399377,
-        "rawStatus": "passed",
-        "tags": [],
-        "type": "e2e",
-        "filePath": "C:\\Users\\Ricardo Moeljoredjo\\Documents\\AHWebApi\\tests\\api.spec.ts",
-        "retries": 0,
-        "flaky": false,
-        "steps": [],
-        "suite": "chromium > api.spec.ts > Collection Retrieval",
-        "extra": {
-          "annotations": []
-        }
-      },
-      {
-        "name": "Retrieve collection and check objectnumber & longtitle",
-        "status": "passed",
-        "duration": 1388,
-        "start": 1730399376,
-        "stop": 1730399377,
-        "rawStatus": "passed",
-        "tags": [],
-        "type": "e2e",
-        "filePath": "C:\\Users\\Ricardo Moeljoredjo\\Documents\\AHWebApi\\tests\\api.spec.ts",
-        "retries": 0,
-        "flaky": false,
-        "steps": [],
-        "suite": "chromium > api.spec.ts > Collection Retrieval Details",
-        "extra": {
-          "annotations": []
-        }
-      },
-      {
-        "name": "Fail this test for reporting",
-        "status": "failed",
-        "duration": 1103,
-        "start": 1730399377,
-        "stop": 1730399379,
-        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"Does not exist\"\u001b[39m\nReceived: \u001b[31m\"Meissener Porzellan Manufaktur\"\u001b[39m",
-        "trace": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"Does not exist\"\u001b[39m\nReceived: \u001b[31m\"Meissener Porzellan Manufaktur\"\u001b[39m\n    at C:\\Users\\Ricardo Moeljoredjo\\Documents\\AHWebApi\\tests\\api.spec.ts:54:58",
-        "rawStatus": "failed",
-        "tags": [],
-        "type": "e2e",
-        "filePath": "C:\\Users\\Ricardo Moeljoredjo\\Documents\\AHWebApi\\tests\\api.spec.ts",
-        "retries": 0,
-        "flaky": false,
-        "steps": [],
-        "suite": "chromium > api.spec.ts > Collection Retrieval Details",
-        "extra": {
-          "annotations": []
-        }
-      },
-      {
-        "name": "Retrieve Collection and check details",
-        "status": "passed",
-        "duration": 1093,
-        "start": 1730399378,
-        "stop": 1730399379,
+        "duration": 1311,
+        "start": 1730438107,
+        "stop": 1730438108,
         "rawStatus": "passed",
         "tags": [],
         "type": "e2e",
