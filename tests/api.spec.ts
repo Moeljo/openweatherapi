@@ -13,8 +13,8 @@ test.describe.parallel("Unsuccessful response", () => {
         //`baseUrl` is the base URL of the API.
         const response = await request.get(`${baseUrl}`)
         expect(response.status()).toBe(401)
-    })
-})
+    });
+});
 
 //Opdracht 2 - Assert op 200 + valideer veld met waarde "Utrecht"
 test.describe.parallel("Successful response Utrecht", () => {
@@ -32,8 +32,8 @@ test.describe.parallel("Successful response Utrecht", () => {
         const data = await response.json()
         expect(data).toHaveProperty('name')
         expect(data.name).toBe('Utrecht')
-    })
-})
+    });
+});
 
 //Opdracht 3 - Check voor slecht weer in Utrecht
 test.describe.parallel("Validate if its raining in Utrecht", () => {
@@ -57,9 +57,9 @@ test.describe.parallel("Validate if its raining in Utrecht", () => {
             console.log("It is raining");
         } else {
         console.log("it is not raining");
-        }
-    })
-})
+        };
+    });
+});
 
 //Opdracht 4.1 - Valideer id van Groningen
 test.describe.parallel("Validate id Groningen", () => {
@@ -78,8 +78,8 @@ test.describe.parallel("Validate id Groningen", () => {
         expect(data).toHaveProperty('name')
         expect(data.name).toBe('Groningen')
         expect(data.id).toBe(2755251)
-    })
-})
+    });
+});
 
 //Opdracht 4.2 - Geparametiseerde test 
 //Amsterdam, Lat = 52.370216, Lon = 4.895168, id = 2759794
@@ -91,8 +91,8 @@ test.describe.parallel("Validate ids for different cities", () => {
         { city: 'Amsterdam', latitude: '52.370216', longitude: '4.895168', expectedId: 2759794 },
         { city: 'Rotterdam', latitude: '51.924419', longitude: '4.477733', expectedId: 2747891 },
         //Value city and expectedId keeps changing?
-        { city: 'Gemeente Den Haag', latitude: '52.070499', longitude: '4.300700', expectedId: 2747372 },
-        //{ city: 'The Hague', latitude: '52.070499', longitude: '4.300700', expectedId: 2747373 },
+        //{ city: 'Gemeente Den Haag', latitude: '52.070499', longitude: '4.300700', expectedId: 2747372 },
+        { city: 'The Hague', latitude: '52.070499', longitude: '4.300700', expectedId: 2747373 },
         { city: 'Groningen', latitude: '53.219383', longitude: '6.566502', expectedId: 2755251 }
     ];
     cities.forEach(({ city, latitude, longitude, expectedId }) => {
