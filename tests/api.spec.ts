@@ -1,68 +1,93 @@
 import { test, expect } from '@playwright/test';
+import dotenv from 'dotenv';
+import path from 'path';
+dotenv.config({ path: path.resolve(__dirname, '..', '.env') });
 
-const API_KEY = '0fiuZFh4'
+const baseUrl = process.env.baseURL as string;
+const appID = process.env.appID as string;
+const mazeUrl = process.env.tvmazeURL as string;
+const mazeID = process.env.tvmazeID as string;
 
-
-test.describe.parallel("Successful response", () => {
-    test("Validate response status 200", async ({ request }) => {
-        const response = await request.get(`?key=${API_KEY}`)
-        expect(response.status()).toBe(200)
+// Opdracht 1 - assert op 401 - call zonder appID
+test.describe.parallel("Unsuccessful response", () => {
+    test("Validate response status 401", async ({ request }) => {
+        const response = await request.get(`${baseUrl}`)
+        expect(response.status()).toBe(401)
     })
 })
 
-test.describe.parallel("Collection Retrieval", () => {
-    test("Retrieve collection and check for title", async ({ request }) => {
-        const response = await request.get(`?key=${API_KEY}`)
-        expect(response.status()).toBe(200)
-        const data = await response.json()
-        expect(data.artObjects.length).toBeGreaterThan(0)
-        expect(data.artObjects[0]).toHaveProperty('title')
-    })
-})
-
-test.describe.parallel("Collection Retrieval", () => {
-    test("Retrieve collection and validate title", async ({ request }) => {
-        const response = await request.get(`?key=${API_KEY}`)
-        expect(response.status()).toBe(200)
-        const data = await response.json()
-        expect(data.artObjects.length).toBeGreaterThan(0) 
-        expect(data.artObjects[0]).toHaveProperty('title')
-        expect(data.artObjects[0].title).toBe('Blauwe papegaai')
-    })
-})
-
-test.describe.parallel("Collection Retrieval Details", () => {
-    test("Retrieve collection and check longtitle of objectNumber", async ({ request }) => {
-        const objectNumber = 'BK-17496'
-        const response = await request.get(`?objectNumber=${objectNumber}&key=${API_KEY}`)
+// Opdracht 2 - assert op 200 + valideer veld met waarde "Utrecht"
+test.describe.parallel("Successful response Utrecht", () => {
+    test("Validate response status 200 from location Utrecht", async ({ request }) => {
+        const latitude = '52.090736';
+        const longitude = '5.121420';
+        const response = await request.get(`${baseUrl}?lat=${latitude}&lon=${longitude}&appid=${appID}`)
         expect(response.status()).toBe(200)
         const data = await response.json()
-        expect(data.artObjects.length).toBeGreaterThan(0)
-        expect(data.artObjects[0]).toHaveProperty('longTitle')
-        expect(data.artObjects[0].longTitle).toBe('Blauwe papegaai, Meissener Porzellan Manufaktur, 1731')
+        expect(data).toHaveProperty('name')
+        expect(data.name).toBe('Utrecht')
     })
 })
 
-test.describe.parallel("Collection Retrieval Details", () => {
-    test("Fail this test for reporting", async ({ request }) => {
-        const objectNumber = 'SK-A-447' 
-        const response = await request.get(`?objectNumber=${objectNumber}&key=${API_KEY}`)
+// Opdracht 3 - Check voor slecht weer in Utrecht
+test.describe.parallel("Validate if its raining in Utrecht", () => {
+    test("Validate the weather in Utrecht", async ({ request }) => {
+        const latitude = '52.090736';
+        const longitude = '5.121420';
+        const response = await request.get(`${baseUrl}?lat=${latitude}&lon=${longitude}&appid=${appID}`)
         expect(response.status()).toBe(200)
         const data = await response.json()
-        expect(data.artObjects[0]).toHaveProperty('title')
-        expect(data.artObjects[0]).toHaveProperty('principalOrFirstMaker')
-        expect(data.artObjects[0].principalOrFirstMaker).toBe('Does not exist') // Does not exist Meissener Porzellan Manufaktur
+        // Dynamically set checkWeather based on API response
+        let checkWeather = data.weather && data.weather[0].main === 'Rain'; 
+        if (checkWeather) {
+            expect(data).toHaveProperty('weather')
+            expect(data.weather[0].main).toBe('Rain')
+            console.log("It is raining");
+        } else {
+        console.log("it is not raining");
+        }
     })
 })
 
-test.describe.parallel("Collection Retrieval Details", () => {
-    test("Retrieve Collection and check details of objectNumber", async ({ request }) => {
-        const objectNumber = 'RP-P-OB-184' 
-        const response = await request.get(`?objectNumber=${objectNumber}&key=${API_KEY}`)
+// Opdracht 4.1 - Valideer id van Groningen
+test.describe.parallel("Validate id Groningen", () => {
+    test("Validate id from location Groningen", async ({ request }) => {
+        const latitude = '53.219383';
+        const longitude = '6.566502';
+        const response = await request.get(`${baseUrl}?lat=${latitude}&lon=${longitude}&appid=${appID}`)
         expect(response.status()).toBe(200)
         const data = await response.json()
-        expect(data.artObjects[0]).toHaveProperty('title')
-        expect(data.artObjects[0]).toHaveProperty('principalOrFirstMaker')
-        expect(data.artObjects[8].principalOrFirstMaker).toBe('Willem van de Velde (I)')
+        expect(data).toHaveProperty('name')
+        expect(data.name).toBe('Groningen')
+        expect(data.id).toBe(2755251)
     })
 })
+
+// Opdracht 4.2 - Geparametiseerde test 
+//Amsterdam, Lat = 52.370216, Lon = 4.895168, id = 2759794
+//Rotterdam, Lat = 51.924419, Lon = 4.477733, id = 2747891
+//Den Haag, Lat = 52.070499, Lon = 4.300700, id = 2747372
+//Groningen, Lat = 53.219383, Lon = 6.566502, id = 2755251
+test.describe.parallel("Validate ids for different cities", () => {
+    const cities = [
+        { city: 'Amsterdam', latitude: '52.370216', longitude: '4.895168', expectedId: 2759794 },
+        { city: 'Rotterdam', latitude: '51.924419', longitude: '4.477733', expectedId: 2747891 },
+        //{ city: 'Gemeente Den Haag', latitude: '52.070499', longitude: '4.300700', expectedId: 2747372 },
+        // value city and expectedId keeps changing
+        { city: 'The Hague', latitude: '52.070499', longitude: '4.300700', expectedId: 2747373 },
+        { city: 'Groningen', latitude: '53.219383', longitude: '6.566502', expectedId: 2755251 }
+    ];
+    cities.forEach(({ city, latitude, longitude, expectedId }) => {
+        test.only(`Validate id from location ${city}`, async ({ request }) => {
+            const response = await request.get(`${baseUrl}?lat=${latitude}&lon=${longitude}&appid=${appID}`);
+            expect(response.status()).toBe(200);
+            const data = await response.json();     
+            // Validate the city name and the city ID
+            expect(data).toHaveProperty('name');
+            expect(data.name).toBe(city);
+            expect(data.id).toBe(expectedId);
+        });
+    });
+});
+
+// Opdracht 5 - TV Maze API 

@@ -33,7 +33,7 @@ export default defineConfig({
     // baseURL: 'http://127.0.0.1:3000',
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
-    baseURL: 'https://www.rijksmuseum.nl/api/nl/collection',
+    //baseURL: '',
     extraHTTPHeaders: {
       // We set this header per GitHub guidelines.
       //'Accept': 'application/vnd.github.v3+json',

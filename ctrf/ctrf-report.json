@@ -4,31 +4,85 @@
       "name": "playwright"
     },
     "summary": {
-      "tests": 1,
-      "passed": 1,
+      "tests": 4,
+      "passed": 4,
       "failed": 0,
       "pending": 0,
       "skipped": 0,
       "other": 0,
-      "start": 1730438106403,
-      "stop": 1730438108433,
+      "start": 1733480512483,
+      "stop": 1733480513645,
       "suites": 0
     },
     "tests": [
       {
-        "name": "Retrieve Collection and check details of objectNumber",
+        "name": "Validate id from location Amsterdam",
         "status": "passed",
-        "duration": 1311,
-        "start": 1730438107,
-        "stop": 1730438108,
+        "duration": 201,
+        "start": 1733480513,
+        "stop": 1733480513,
         "rawStatus": "passed",
         "tags": [],
         "type": "e2e",
-        "filePath": "C:\\Users\\Ricardo Moeljoredjo\\Documents\\AHWebApi\\tests\\api.spec.ts",
+        "filePath": "C:\\Users\\Ricardo Moeljoredjo\\Documents\\OpenWeatherApi\\tests\\api.spec.ts",
         "retries": 0,
         "flaky": false,
         "steps": [],
-        "suite": "chromium > api.spec.ts > Collection Retrieval Details",
+        "suite": "chromium > api.spec.ts > Validate ids for different cities",
+        "extra": {
+          "annotations": []
+        }
+      },
+      {
+        "name": "Validate id from location Rotterdam",
+        "status": "passed",
+        "duration": 213,
+        "start": 1733480513,
+        "stop": 1733480513,
+        "rawStatus": "passed",
+        "tags": [],
+        "type": "e2e",
+        "filePath": "C:\\Users\\Ricardo Moeljoredjo\\Documents\\OpenWeatherApi\\tests\\api.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "steps": [],
+        "suite": "chromium > api.spec.ts > Validate ids for different cities",
+        "extra": {
+          "annotations": []
+        }
+      },
+      {
+        "name": "Validate id from location The Hague",
+        "status": "passed",
+        "duration": 191,
+        "start": 1733480513,
+        "stop": 1733480513,
+        "rawStatus": "passed",
+        "tags": [],
+        "type": "e2e",
+        "filePath": "C:\\Users\\Ricardo Moeljoredjo\\Documents\\OpenWeatherApi\\tests\\api.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "steps": [],
+        "suite": "chromium > api.spec.ts > Validate ids for different cities",
+        "extra": {
+          "annotations": []
+        }
+      },
+      {
+        "name": "Validate id from location Groningen",
+        "status": "passed",
+        "duration": 191,
+        "start": 1733480513,
+        "stop": 1733480513,
+        "rawStatus": "passed",
+        "tags": [],
+        "type": "e2e",
+        "filePath": "C:\\Users\\Ricardo Moeljoredjo\\Documents\\OpenWeatherApi\\tests\\api.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "steps": [],
+        "suite": "chromium > api.spec.ts > Validate ids for different cities",
         "extra": {
           "annotations": []
         }
