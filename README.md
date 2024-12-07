@@ -1,7 +1,7 @@
 # Project: openWeatherApi 
 
 # Description
-This project has been developed using Playwright, TypeScript and some crtf reporting. All tests can be found in openweatherapi\tests\api.spec.ts. Within this file you will
+This project has been developed using Playwright, TypeScript and some ctrf reporting. All tests can be found in openweatherapi\tests\api.spec.ts. Within this file you will
 find 6 different tests. The Parameterized test will do 4 tests and can fail depending on the city name + id combination. For some reason this keeps changing. The assignment has
 been added as a comment at the top. Within the test file you can find the following tests
 - 1. Unsuccessful response - Validates a 401 (because no appId is provided)
@@ -25,3 +25,8 @@ Now some instruction on how to set everthing up! In order to use this project yo
 - npx playwright test 
 OR
 - npx playwright test api.spec.ts
+
+# Reporting 
+I have build in ctrf reporting, which is generated when I push my code to Github. You can see some of those testruns via the tab (Github) Actions. Within those runs a 
+test summary is given that shows which test have run and which ones have failed. The reason why my test are failing in those runs is due to the missing 
+baseURL and appID, which are provide via my .env file. Since I orignally added that file within my .gitignore it will not pushed to Github. Without that file the test should fail. 
